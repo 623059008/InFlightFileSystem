@@ -1,0 +1,102 @@
+{
+  "msg_close1": {
+    "html": "button",
+    "zh-text": "×",
+    "en-text": ""
+  },
+  "movies_btn": {
+    "html": "button",
+    "zh-text": "点播电影",
+    "en-text": "Movie"
+  },
+  "help_btn": {
+    "html": "button",
+    "zh-text": "使用帮助",
+    "en-text": "Help"
+  },
+  "style_btn": {
+    "html": "button",
+    "zh-text": "设置",
+    "en-text": "Setting"
+  },
+  "exit_btn": {
+    "html": "button",
+    "zh-text": "退出应用",
+    "en-text": "Exit"
+  },
+  "movies_page_back": {
+    "html": "button",
+    "zh-text": "返回",
+    "en-text": "Back"
+  },
+  "help_page_back": {
+    "html": "button",
+    "zh-text": "返回",
+    "en-text": "Back"
+  },
+  "style_page_back": {
+    "html": "button",
+    "zh-text": "返回",
+    "en-text": "Back"
+  },
+  "language_btn": {
+    "html": "button",
+    "zh-text": "中文",
+    "en-text": "English"
+  },
+  "update_movie_info_btn": {
+    "html": "button",
+    "zh-text": "更新电影",
+    "en-text": "Update Movie"
+  },
+  "render_everything": {
+    "html": "button",
+    "zh-text": "渲染所有",
+    "en-text": ""
+  },
+  "loading_text": {
+    "html": "span",
+    "zh-text": "加载中",
+    "en-text": "Loading"
+  },
+  "movies_page_header_text": {
+    "html": "span",
+    "zh-text": "电影点播",
+    "en-text": "Movies"
+  },
+  "help_page_header_text": {
+    "html": "span",
+    "zh-text": "使用介绍",
+    "en-text": "Help Introduction"
+  },
+  "style_page_header_text": {
+    "html": "span",
+    "zh-text": "设置",
+    "en-text": "Setting"
+  },
+  "language_config": {
+    "html": "span",
+    "zh-text": "语言",
+    "en-text": "Language"
+  },
+  "background_config": {
+    "html": "span",
+    "zh-text": "背景",
+    "en-text": "Background Color"
+  },
+  "update_movie_info": {
+    "html": "span",
+    "zh-text": "更新电影(需要网络)",
+    "en-text": "Update Movie(With Network)"
+  },
+  "movie_title_info": {
+    "html": "span",
+    "zh-text": "视频标题",
+    "en-text": "Movie-Title"
+  },
+  "welcome_text": {
+    "html": "h1",
+    "zh-text": "航空电影播放系统",
+    "en-text": "In Flight Movie System"
+  }
+}

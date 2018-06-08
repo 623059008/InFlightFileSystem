@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>In Flight Film System</title>
+
+  <!-- CSS -->
+  <!-- <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500"> -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/semantic.css">
+  <link rel="stylesheet" href="css/form-elements.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/movie.css">
+  <link rel="stylesheet" href="css/video.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+  <!-- Favicon and touch icons -->
+
+  <!-- <link rel="shortcut icon" href="../image/cake.jpg"> -->
+  <!--
+        不同规格的网页tab图片
+        <link rel="shortcut icon" href="ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+        -->
+
+</head>
+
+<body tabindex=-1>
+
+  <!-- Top menu -->
+
+  <!-- Top content -->
+  <div style="width:800px;height:600px;position:relative;padding:0px;margin-left:0%;overflow-x:hidden;overflow-y:auto;" id="InFlightContent">
+    <div class="ui active dimmer" id="loading_dimmer">
+      <div class="ui indeterminate text loader"><span id="loading_text">加载中</span></div>
+    </div>
+    <div class="head_notify" id="head_notify" style="width:100%;height:10%;margin:0;position:absolute;top:0;z-index:999;display:none;font-size:0.5em;"></div>
+    <div id="welcome_page" class="row" style="width:100%;height:600px;padding-top:1%;margin:0%;overflow: hidden;text-align:center;" tabindex=-1>
+      <img id="logo_img" style="width:10%;height:10%;position:absolute;right:0;top:0;" src="../../../../config/logo.jpg" />
+      <h1 id="welcome_text" style="color:white;margin-top:20%;">航空电影播放系统</h1>
+      <div id="welcome_buttons" style="margin-top:0%;display:block;">
+        <button id="movies_btn" class="ui inverted violet button" style="display:block;margin:2% 40%;" type="button" tabindex="0">点播电影</button>
+        <button id="style_btn" class="ui inverted olive button" style="display:block;margin:2% 40%;" type="button" tabindex="0">设置</button>
+        <button id="help_btn" class="ui inverted green button" style="display:block;margin:2% 40%;" type="button" tabindex="0">使用帮助</button>
+        <button id="exit_btn" class="ui inverted black button" style="display:block;margin:2% 40%;" type="button" tabindex="0">退出应用</button>
+      </div>
+    </div>
+
+    <div id="movies_page" class="row" style="width:100%;height:600px;padding-top:1%;margin:0%;">
+      <div class="page_header" id="movies_page_header">
+        <span class="header_text" id="movies_page_header_text" style="left:0;font-size:3em;position:absolute;">电影点播</span>
+        <button type="button" class="ui inverted orange button back-button" id="movies_page_back" style="right:2%;top:auto;position:absolute;" tabindex="0"><i class="glyphicon glyphicon-chevron-left"></i>返回</button>
+      </div>
+      <div id="movies_page_header_trigger"></div>
+      <div class="movie_content" id="movie_content" style="top:0;margin-left:0%;margin-top:2%;height:auto;padding-left:5%;">
+      </div>
+    </div>
+    <div id="help_page" class="row" style="width:100%;height:600px;padding-top:1%;margin:0%;overflow-x:hidden;overflow-y:auto;">
+      <div class="page_header" id="help_page_header" style="width:100%;height:70px;padding:2% 0%;border-bottom:1px solid #ddd;position:relative;">
+        <span class="header_text" id="help_page_header_text" style="left:0;font-size:3em;position:absolute;">使用介绍</span>
+        <button type="button" class="ui inverted orange button back-button" id="help_page_back" style="right:2%;top:auto;position:absolute;" tabindex="0"><i class="glyphicon glyphicon-chevron-left"></i>返回</button>
+      </div>
+    </div>
+    <div id="style_page" class="row" style="width:100%;height:600px;padding-top:1%;margin:0%;overflow-x:hidden;overflow-y:auto;">
+      <div class="page_header" id="style_page_header" style="width:100%;height:70px;padding:2% 0%;border-bottom:1px solid #ddd;position:relative;">
+        <span class="header_text" id="style_page_header_text" style="left:0;font-size:3em;position:absolute;">设置</span>
+        <button type="button" class="ui inverted orange button back-button" id="style_page_back" style="right:2%;top:auto;position:absolute;" tabindex="0"><i class="glyphicon glyphicon-chevron-left"></i>返回</button>
+      </div>
+      <div class="config_content" id="config_content" style="margin-top:2%;padding:2% 1%;">
+        <span id="language_config" class="left" style="width:20%;">语言</span>
+        <button id="language_btn" class="ui inverted orange button" type="button" tabindex="0">中文</button>
+        <div class="ui divider"></div>
+        <span id="background_config" class="left" style="width:20%;">背景</span>
+        <div id="background_config_div" style="width:100%;height:auto;margin-top:5%;">
+        </div>
+        <div class="ui divider"></div>
+        <span id="update_movie_info" class="left" style="width:20%">更新电影(需要网络)</span>
+        <button id="update_movie_info_btn" class="ui inverted teal button" type="button" tabindex="0">更新电影</button>
+      </div>
+    </div>
+    <div id="play_page" class="row" style="width:100%;height:600px;margin:0%;overflow-x:hidden;overflow-y:hidden;">
+      <div id="play_content" style="margin:0%;height:100%;width:100%;overflow-x:hidden;overflow-y:hidden;">
+        <div class="videos" id="videos">
+          <div class="video_b" id="video_b" style="margin-top:0;height:100%;">
+            <div class="video_b_in" id="video_b_in">
+              <div class="video_ls" id="video_ls" style="height:100%;">
+                <video id="vids">
+                不支持视频播放,解码错误
+                </video>
+                <!--标题-->
+                <span class="title_top" id="movie_title_info">
+                  视频标题
+                </span>
+                <!--列表菜单-->
+                <div class="list_right" id="list_right">
+                  <a href="javascript:void(0)" id="play_page_back"><i class="glyphicon glyphicon-share-alt"></i></a>
+                  <!-- <a href="javascript:void(0)" id="last_play"><i class="glyphicon glyphicon-menu-up"></i></a>
+                  <a href="javascript:void(0)" id="next_play"><i class="glyphicon glyphicon-menu-down"></i></a> -->
+                </div>
+                <!--暂停-->
+                <div id="pass">
+                  <img src="img/play-button.png">
+                </div>
+                <!--控制器-->
+                <div class="controls">
+                  <!--进度条容器-->
+                  <div id="pBar">
+                    <!--进度条底色-->
+                    <div class="pBar_bj" id="pBar_bj">
+                      <!--缓冲的进度条-->
+                      <div id="buff"></div>
+                      <!--进度条动态-->
+                      <div id="pBar_move">
+                        <!--进度条按钮-->
+                        <div id="pBtn"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--展厅播放快进快退音量全屏-->
+                  <div class="trol_list" id="trol_list">
+                    <!--暂停和快进快退-->
+                    <div class="list_1" id="list_1">
+                      <i class="glyphicon glyphicon-backward" onClick="ktui()"></i>
+                      <i class="glyphicon glyphicon-play" id="ztbf"></i>
+                      <i class="glyphicon glyphicon-forward" onClick="kjin()"></i>
+                    </div>
+                    <!--音量-->
+                    <div class="voice" id="voice">
+                      <i class="glyphicon glyphicon-volume-up" id="volume-icon" style="float:left;"></i>
+                      <div class="voicep" id="voicep">
+                        <div id="vBar">
+                          <div id="vBar_in"></div>
+                        </div>
+                        <div id="vBtn"></div>
+                      </div>
+                    </div>
+                    <!--时间-->
+                    <div class="vtime" id="vtime">
+                      <font id="nTime">00:00:00</font>/<em id="aTime">00:00:00</em>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button type="button" id="render_everything">渲染所有</button>
+  <div id="console_div">
+
+  </div>
+  <!-- Javascript -->
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="js/Notify.js"></script>
+  <script src="js/scripts.js"></script>
+
+  <!--[if lt IE 10]>
+            <script src="js/placeholder.js"></script>
+        <![endif]-->
+
+</body>
+
+</html>
